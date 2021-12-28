@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Chauffeur;
+use App\Entity\chauffeur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

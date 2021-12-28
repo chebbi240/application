@@ -14,6 +14,7 @@ class Reservation
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     *  @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
@@ -29,13 +30,13 @@ class Reservation
 
     /**
      * @ORM\ManyToOne(targetEntity=camion::class, inversedBy="reservations")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $camion;
 
     /**
      * @ORM\ManyToOne(targetEntity=chauffeur::class, inversedBy="reservations")
-     *  @ORM\JoinColumn(nullable=false)
+     *  @ORM\JoinColumn(nullable=true)
      */
     private $chauffeur;
 

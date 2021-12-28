@@ -29,6 +29,11 @@ class Marque
      */
     private $camions;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Modele::class, inversedBy="Marque")
+     */
+    private $modele;
+
     public function __construct()
     {
         $this->camions = new ArrayCollection();
@@ -77,6 +82,18 @@ class Marque
                 $camion->setMarque(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getModele(): ?Modele
+    {
+        return $this->modele;
+    }
+
+    public function setModele(?Modele $modele): self
+    {
+        $this->modele = $modele;
 
         return $this;
     }

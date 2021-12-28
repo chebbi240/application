@@ -20,7 +20,7 @@ class Camion
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $matricule;
 
@@ -30,13 +30,13 @@ class Camion
     private $Kilometrage;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Marque::class, inversedBy="camions")
+     * @ORM\ManyToOne(targetEntity=Marque::class, inversedBy="Camions")
      * @ORM\JoinColumn(nullable=false)
      */
     private $marque;
 
     /**
-     * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="camion")
+     * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="Camion")
      */
     private $reservations;
 
