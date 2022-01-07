@@ -29,13 +29,13 @@ class Reservation
     private $kilometrage;
 
     /**
-     * @ORM\ManyToOne(targetEntity=camion::class, inversedBy="reservations")
+     * @ORM\ManyToOne(targetEntity=Camion::class, inversedBy="reservations")
      * @ORM\JoinColumn(nullable=true)
      */
     private $camion;
 
     /**
-     * @ORM\ManyToOne(targetEntity=chauffeur::class, inversedBy="reservations")
+     * @ORM\ManyToOne(targetEntity=Chauffeur::class, inversedBy="reservations")
      *  @ORM\JoinColumn(nullable=true)
      */
     private $chauffeur;
@@ -69,24 +69,24 @@ class Reservation
         return $this;
     }
 
-    public function getCamion(): ?camion
+    public function getCamion(): ?Camion
     {
         return $this->camion;
     }
 
-    public function setCamion(?camion $camion): self
+    public function setCamion(?Camion $camion): self
     {
         $this->camion = $camion;
 
         return $this;
     }
 
-    public function getChauffeur(): ?chauffeur
+    public function getChauffeur(): ?Chauffeur
     {
         return $this->chauffeur;
     }
 
-    public function setChauffeur(?chauffeur $chauffeur): self
+    public function setChauffeur(?Chauffeur $chauffeur): self
     {
         $this->chauffeur = $chauffeur;
 

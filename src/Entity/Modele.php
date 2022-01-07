@@ -39,12 +39,12 @@ class Modele
         return $this->id;
     }
 
-    public function getModeleLibelle(): ?string
+    public function getModele_Libelle(): ?string
     {
         return $this->modele_libelle;
     }
 
-    public function setModeleLibelle(string $modele_libelle): self
+    public function setModele_Libelle(string $modele_libelle): self
     {
         $this->modele_libelle = $modele_libelle;
 

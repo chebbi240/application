@@ -30,13 +30,13 @@ class Camion
     private $Kilometrage;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Marque::class, inversedBy="Camions")
+     * @ORM\ManyToOne(targetEntity=Marque::class, inversedBy="camions")
      * @ORM\JoinColumn(nullable=false)
      */
     private $marque;
 
     /**
-     * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="Camion")
+     * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="camion")
      */
     private $reservations;
 

@@ -1,6 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}page d'accueil{% endblock %}
-{% block monTitre %}société de Transport{% endblock %}
+{% block monTitre %}Bienvenue dans M2Pointage{% endblock %}
 {% block body %}
+<div class="container">
+<p1> M2pointage est une application de pointage développé pour l’entreprise M2transport, qui pour but de numériser les feuilles de routes. Une feuille de route est un document dans lequel chaque chauffeur doit remplir à la main ces informations chaque matin.
+ A l’aide de M2pointage le chauffeur pourra remplir exactement les mêmes informations de la feuille route mais de façon digitale.</p1>
+</div>
+<div class="row no-gutters align-items-center p-2">
+              <img src="{{asset('image/~back.image')}}" class="card-img">
+            </div>
 {% endblock %}

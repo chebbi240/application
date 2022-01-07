@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Afficher les chauffeurs{% endblock %}
-{% block monTitre %}Affichage de chauffeur{% endblock %}
+{% block monTitre %}création d'un chauffeur{% endblock %}
 {% block body %}
-<div class="row no-gutters">
-  
 
+{{form_start(formChauffeur)}}
+{{form_widget(formChauffeur)}}
+<div
+  <button type ="submit" class ="btn btn-success">Ajoutez chauffeur</button>
+{{form_end(formChauffeur)}}
 {% endblock %}

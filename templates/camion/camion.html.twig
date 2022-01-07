@@ -1,12 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}liste des camions{% endblock %}
+{% block title %}page d'accueil{% endblock %}
 {% block monTitre %}liste des camions{% endblock %}
 
 {% block body %}
-<div class="row no-gutters">
- 
+ <div class="row no-gutters">
+    {% for camion in camions %}
+     <div class="col-12 col-lg-6 p-1">
+        <div class="card mb-3">
+           <div class="row no-gutters align-items-center p-2">
+              <img src="{{asset('image/~12.image')}}" class="card-img">
+            </div>
+            <div class="col">
+              <div class="card-title">
+                 <h5 class="card-title">{{camion.matricule}}</h5>
+                  <div> kilometrage:{{camion.kilometrage}}</div>
+                   <div> Marque:{{camion.marque.marque_libelle}}</div>
+    
+               </div>
+              </div>
+        </div> 
+      </div>   
+      {% if admin %} 
+         <div class="row-no-gutters"> 
+           <a href="" class="col btn btn-warning">Modifier</a>
+           <a href="" class="col btn btn-danger">Supprimer</a>
+         </div>
+      {% endif %}
+    {% endfor %}
+  </div>
 
- {% endfor %}
-</div>
 {% endblock %}

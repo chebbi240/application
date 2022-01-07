@@ -30,7 +30,7 @@ class Marque
     private $camions;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Modele::class, inversedBy="Marque")
+     * @ORM\ManyToOne(targetEntity=Modele::class, inversedBy="marque")
      */
     private $modele;
 
@@ -44,12 +44,12 @@ class Marque
         return $this->id;
     }
 
-    public function getMarqueLibelle(): ?string
+    public function getMarque_Libelle(): ?string
     {
         return $this->marque_libelle;
     }
 
-    public function setMarqueLibelle(string $marque_libelle): self
+    public function setMarque_Libelle(string $marque_libelle): self
     {
         $this->marque_libelle = $marque_libelle;
 
