@@ -18,18 +18,22 @@ class SecurityController extends AbstractController{
      */
     public function registration(Request $request, EntityManagerInterface $manager ){
         $user = new User();
-        $form = $this ->createForm(RegistrationType::class,$user);
+
+        $form = $this ->createForm(RegistrationType::class, $user);
+
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->flush();
+            $manager -> persist($user);
+            $manager->flush();
+
+            return $this->redirectToRoute('security_login');
         }
         return $this->render('security/registration.html.twig',[
             'form' =>$form->createview() ]);
     }
 
     /**
-     * @Route("/login", name="app_login")
+     * @Route("/login", name="security_login")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
