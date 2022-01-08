@@ -35,11 +35,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * Assert\EqualiTo(propertyPath="confirm_password")
      */
     private $password;
 
     /**
      * @ORM\Column(type="boolean")
+     * Assert\EqualiTo(propertyPath="confirm_password", message="Vous n'avez pas tapé le meme mot de passe" )
      */
     public $confirm_password ;
 

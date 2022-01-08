@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Controller;
-
 use App\Entity\Camion;
 use App\Repository\CamionRepository;
 use Doctrine\ORM\EntityManager;
