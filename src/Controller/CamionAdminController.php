@@ -11,16 +11,21 @@ use Symfony\Component\Routing\Annotation\Route ;
 
 class CamionAdminController extends AbstractDashboardController
 {
-    /**
-     * @Route("/admin", name="admin")
-     */
+    // /**
+    //  * @Route("/admin", name="admin")
+    //  */
     public function afficher_camion(CamionRepository $repo ){
         $camions = $repo->findAll(); 
         
           return $this->render('camion/camion.html.twig',[
-              "camions"=>$camions 
-              
+              "camions"=>$camions,
+              "admin"=>true
           ]);
+            
+          
+          
+            
+              
           
    
     }

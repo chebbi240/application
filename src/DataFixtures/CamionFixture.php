@@ -18,24 +18,24 @@ class CamionFixture extends Fixture
     public function load(ObjectManager $manager): void
     {
      $modele1 = new Modele();
-     $modele1 ->setModeleLibelle("Trafic");
+     $modele1 ->setModele_Libelle("Trafic");
      $manager->persist($modele1);
 
      $modele2 = new Modele();
-     $modele2 ->setModeleLibelle("Expert");
+     $modele2 ->setModele_Libelle("Expert");
      $manager->persist($modele2);
 
      $modele3 = new Modele();
-     $modele3 ->setModeleLibelle("Expert");
+     $modele3 ->setModele_Libelle("Expert");
      $manager->persist($modele3);
 
       $m1 = new Marque();
-      $m1->setMarqueLibelle("Peugeot")
+      $m1->setMarque_Libelle("Peugeot")
          ->setModele($modele2);
       $manager->persist($m1);
 
       $m2 = new Marque();
-      $m2 ->setMarqueLibelle("Renault")
+      $m2 ->setMarque_Libelle("Renault")
           ->setModele($modele1);
       $manager->persist($m2);
       //generer de maniere aléatoire l'ensemble de nos camions
@@ -47,7 +47,7 @@ class CamionFixture extends Fixture
         for($i=1 ;$i<=$rand;$i++){
            $c = new Camion();
          //Xx1232xx
-          $c->setMatricule($faker->regexify("[A-Z]{2}[0-9]{3,4}[A-Z]{2}"))
+          $c->setMatricule($faker->regexify("[A-Z]{2}-[0-9]{3,4}-[A-Z]{2}"))
             ->setKilometrage($faker->randomElement($array= array(3,5)))
             ->setMarque($m1);
           $manager->persist($c);
