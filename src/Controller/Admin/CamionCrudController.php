@@ -15,31 +15,30 @@ class CamionCrudController extends AbstractCrudController
     {
         return Camion::class;
     }
-//   /**
-//      * @Route("/admin", name="admin")
-//      */
+// //   /**
+// //      * @Route("/admin", name="admin")
+// //      */
    
-    public function afficher_camion(CamionRepository $repo, Request $request){
-        $camions = $repo->findAll();
-          return $this->render('camion/camion.html.twig',[
-              "camions"=>$camions,
-        
-              "admin" => true
-          ]);
+//     public function afficher_camion(CamionRepository $repo, Request $request){
+//         $camions = $repo->findAll();
+//           return $this->render('camion/camion.html.twig',[
+//               "camions"=>$camions,
+//               "admin" => true
+//           ]);
           
-      }
+//       }
 
-    // /**
-    //  * @Route("/admin/id", name="modifCamion")
-    //  */
-    public function modification(Camion $camion){
+//     // /**
+//     //  * @Route("/admin/id", name="modifCamion")
+//     //  */
+//     public function modification(Camion $camion){
        
-          return $this->render('admin/modification.html.twig',[
-              "camion"=>$camion]);
+//           return $this->render('admin/modification.html.twig',[
+//               "camion"=>$camion]);
             
 
 
-    }
+//     }
     /*
     public function configureFields(string $pageName): iterable
     {

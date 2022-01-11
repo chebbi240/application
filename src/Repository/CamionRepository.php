@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Camion;
+use doctrine\ORM\Query;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -18,7 +19,10 @@ class CamionRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Camion::class);
     }
-
+public function findAllWithPagination():Query{
+    return $this->createQueryBuilder('v')
+    ->getQuery();
+}
     // /**
     //  * @return Camion[] Returns an array of Camion objects
     //  */
